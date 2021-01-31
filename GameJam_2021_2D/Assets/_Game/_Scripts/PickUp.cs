@@ -5,6 +5,8 @@ using UnityEngine.Events;
 
 public class PickUp : MonoBehaviour
 {
+    public Animator anim;
+
     public UnityEvent OnPickUp;
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -14,6 +16,8 @@ public class PickUp : MonoBehaviour
             OnPickUp.Invoke();
 
             gameObject.SetActive(false);
+
+            anim.SetFloat("Linterna", 1);
         }
     }
 }

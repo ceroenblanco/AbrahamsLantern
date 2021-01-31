@@ -1204,7 +1204,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bg: {fileID: 472743638}
   tipo: 0
-  str_sonidoCerrar: 
+  str_sonidoCerrar: CerrarPuerta
   str_sonidoAbrir: 
 --- !u!1 &345314164
 GameObject:
@@ -2714,7 +2714,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bg: {fileID: 1440724227}
   tipo: 0
-  str_sonidoCerrar: 
+  str_sonidoCerrar: CerrarPuerta
   str_sonidoAbrir: 
 --- !u!61 &783371128
 BoxCollider2D:
@@ -4033,7 +4033,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1119164123
 Transform:
   m_ObjectHideFlags: 0
@@ -4381,7 +4381,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bg: {fileID: 1619229717}
   tipo: 0
-  str_sonidoCerrar: 
+  str_sonidoCerrar: CerrarPuerta
   str_sonidoAbrir: 
 --- !u!61 &1223142687
 BoxCollider2D:
@@ -5281,7 +5281,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bg: {fileID: 1440724227}
   tipo: 0
-  str_sonidoCerrar: 
+  str_sonidoCerrar: CerrarPuerta
   str_sonidoAbrir: 
 --- !u!61 &1451615817
 BoxCollider2D:
@@ -7208,7 +7208,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bg: {fileID: 346948848}
   tipo: 0
-  str_sonidoCerrar: 
+  str_sonidoCerrar: CerrarPuerta
   str_sonidoAbrir: 
 --- !u!61 &1826229890
 BoxCollider2D:
@@ -8708,6 +8708,31 @@ PrefabInstance:
       propertyPath: OnPickUp.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
+    - target: {fileID: 7147653783045685565, guid: 6f70233fd198dce40aa88d85b6e06b53,
+        type: 3}
+      propertyPath: OnPickUp.m_PersistentCalls.m_Calls.Array.data[2].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7147653783045685565, guid: 6f70233fd198dce40aa88d85b6e06b53,
+        type: 3}
+      propertyPath: OnPickUp.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_BoolArgument
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7147653783045685565, guid: 6f70233fd198dce40aa88d85b6e06b53,
+        type: 3}
+      propertyPath: OnPickUp.m_PersistentCalls.m_Calls.Array.data[2].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7147653783045685565, guid: 6f70233fd198dce40aa88d85b6e06b53,
+        type: 3}
+      propertyPath: OnPickUp.m_PersistentCalls.m_Calls.Array.data[2].m_Target
+      value: 
+      objectReference: {fileID: 1588737585}
+    - target: {fileID: 7147653783045685565, guid: 6f70233fd198dce40aa88d85b6e06b53,
+        type: 3}
+      propertyPath: anim
+      value: 
+      objectReference: {fileID: 1073536957}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6f70233fd198dce40aa88d85b6e06b53, type: 3}
 --- !u!1001 &5241680878643439512
