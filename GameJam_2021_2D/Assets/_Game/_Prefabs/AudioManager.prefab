@@ -44,9 +44,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sonidos:
-  - name: MusicaDeFondo
+  - name: MusicaDeFondo1
     clip: {fileID: 8300000, guid: 54b25c6fa74e50445b5a00198c8a9e3c, type: 3}
-    AMG: {fileID: 0}
+    AMG: {fileID: 243059266199269806, guid: 3bd9fd369c4fc9f45b10af1024cbcc01, type: 2}
     volume: 0.5
     pitch: 1
     playOnAwake: 1
@@ -54,7 +54,15 @@ MonoBehaviour:
     source: {fileID: 0}
   - name: CerrarPuerta
     clip: {fileID: 8300000, guid: 89a470b573de62141991f97fe77f195d, type: 3}
-    AMG: {fileID: 0}
+    AMG: {fileID: 243240438779144392, guid: 3bd9fd369c4fc9f45b10af1024cbcc01, type: 2}
+    volume: 1
+    pitch: 1
+    playOnAwake: 0
+    loop: 0
+    source: {fileID: 0}
+  - name: Musica2
+    clip: {fileID: 8300000, guid: 304781d57d27ea14381d7763795748b7, type: 3}
+    AMG: {fileID: 243059266199269806, guid: 3bd9fd369c4fc9f45b10af1024cbcc01, type: 2}
     volume: 1
     pitch: 1
     playOnAwake: 0

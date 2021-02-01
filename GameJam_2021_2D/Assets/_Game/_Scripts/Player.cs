@@ -6,50 +6,79 @@ public class Player : MonoBehaviour
 {
     public Rigidbody2D rb;
     public Animator anim;
-    public Transform t_linterna;
+    public GameObject t_linterna1, t_linterna2, t_linterna3, t_linterna4;
     public GameObject go_pasos;
 
     public float velocidad = 1;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
     void Update()
     {
-        Vector3 dir = Vector3.zero, rot = t_linterna.rotation.eulerAngles;
+        Vector3 dir = Vector3.zero/*, rot = t_linterna.rotation.eulerAngles*/;
 
         if (Input.GetAxisRaw("Vertical") > 0)
         {
             dir.y = 1;
 
-            rot.z = 0;
+            //rot.z = 0;
+
+            if (!t_linterna1.activeSelf)
+            {
+                t_linterna2.SetActive(false);
+                t_linterna3.SetActive(false);
+                t_linterna4.SetActive(false);
+
+                t_linterna1.SetActive(true);
+            }
         }
         else if (Input.GetAxisRaw("Vertical") < 0)
         {
             dir.y = -1;
 
-            rot.z = 180;
+            //rot.z = 180;
+
+            if (!t_linterna2.activeSelf)
+            {
+                t_linterna1.SetActive(false);
+                t_linterna3.SetActive(false);
+                t_linterna4.SetActive(false);
+
+                t_linterna2.SetActive(true);
+            }
         }
         else if (Input.GetAxisRaw("Horizontal") > 0)
         {
             dir.x = 1;
 
-            rot.z = 270;
+            //rot.z = 270;
+
+            if (!t_linterna3.activeSelf)
+            {
+                t_linterna1.SetActive(false);
+                t_linterna2.SetActive(false);
+                t_linterna4.SetActive(false);
+
+                t_linterna3.SetActive(true);
+            }
         }
         else if (Input.GetAxisRaw("Horizontal") < 0)
         {
             dir.x = -1;
 
-            rot.z = 90;
+            //rot.z = 90;
+
+            if (!t_linterna4.activeSelf)
+            {
+                t_linterna1.SetActive(false);
+                t_linterna2.SetActive(false);
+                t_linterna3.SetActive(false);
+
+                t_linterna4.SetActive(true);
+            }
         }
 
         if (dir.x != 0 || dir.y != 0)
         {
-            t_linterna.rotation = Quaternion.Euler(rot);
+            //t_linterna.rotation = Quaternion.Euler(rot);
 
             rb.MovePosition(transform.position + (dir * velocidad/* * Time.deltaTime*/));
 
