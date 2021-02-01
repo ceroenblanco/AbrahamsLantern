@@ -44,7 +44,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sonidos:
-  - name: MusicaDeFondo1
+  - name: Musica1
     clip: {fileID: 8300000, guid: 54b25c6fa74e50445b5a00198c8a9e3c, type: 3}
     AMG: {fileID: 243059266199269806, guid: 3bd9fd369c4fc9f45b10af1024cbcc01, type: 2}
     volume: 0.5

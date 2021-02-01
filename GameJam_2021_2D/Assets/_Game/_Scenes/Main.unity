@@ -2108,7 +2108,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1440724228}
-  m_RootOrder: 6
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
 --- !u!114 &593697693
 MonoBehaviour:
@@ -2582,7 +2582,7 @@ MonoBehaviour:
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
-  m_PointLightOuterRadius: 9.97
+  m_PointLightOuterRadius: 10
   m_PointLightDistance: 3
   m_PointLightQuality: 1
   m_ShapeLightParametricSides: 5
@@ -5628,11 +5628,11 @@ Transform:
   m_Children:
   - {fileID: 156678721}
   - {fileID: 1082398331}
+  - {fileID: 593697692}
   - {fileID: 1840191654}
   - {fileID: 1228264056}
   - {fileID: 133145107}
   - {fileID: 1884428709}
-  - {fileID: 593697692}
   - {fileID: 1768870120}
   m_Father: {fileID: 1564070833}
   m_RootOrder: 0
@@ -6345,6 +6345,7 @@ GameObject:
   - component: {fileID: 1588737589}
   - component: {fileID: 1588737590}
   - component: {fileID: 1588737591}
+  - component: {fileID: 1588737592}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -6455,7 +6456,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   linterna: {fileID: 894698651}
   slr: {fileID: 1638825939}
-  velDescarga: 30
+  velDescarga: 50
+--- !u!114 &1588737592
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1588737585}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7f9a890028f950c4aa966e98af06427c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  light: {fileID: 721730752}
+  vidaInicial: 10
+  vidaActual: 0
+  vidaMax: 0
 --- !u!1 &1592551257
 GameObject:
   m_ObjectHideFlags: 0
@@ -7653,7 +7670,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   audioManager: {fileID: 528505327}
-  str_Sonido: Musica2
+  musicaSiguiente: Musica2
+  musicaAnterior: Musica1
 --- !u!1 &1815863145
 GameObject:
   m_ObjectHideFlags: 0

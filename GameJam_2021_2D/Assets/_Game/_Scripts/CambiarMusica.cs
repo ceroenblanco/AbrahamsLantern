@@ -5,13 +5,23 @@ using UnityEngine;
 public class CambiarMusica : MonoBehaviour
 {
     public AudioManager audioManager;
-    public string str_Sonido;
+    public string musicaSiguiente, musicaAnterior;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.transform.CompareTag("Player") && !string.IsNullOrEmpty(str_Sonido))
+        if (collision.transform.CompareTag("Player") && !string.IsNullOrEmpty(musicaSiguiente))
         {
-            FindObjectOfType<AudioManager>().Play(str_Sonido);
+            if (audioManager == null)
+            {
+                audioManager = FindObjectOfType<AudioManager>();
+            }
+
+            if (audioManager != null)
+            {
+                audioManager.Stop(musicaAnterior);
+
+                audioManager.Play(musicaSiguiente);
+            }
         }
 
         gameObject.SetActive(false);
