@@ -68,7 +68,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -907177475
-  m_SortingLayer: 2
+  m_SortingLayer: 1
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 4a7f95dc4101c8046bc590e8b783d554, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -80,7 +80,7 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
-  m_SpriteSortPoint: 0
+  m_SpriteSortPoint: 1
 --- !u!1 &3438841062029669477
 GameObject:
   m_ObjectHideFlags: 0
@@ -91,7 +91,8 @@ GameObject:
   m_Component:
   - component: {fileID: 3438841062029669476}
   - component: {fileID: 3438841062029669466}
-  - component: {fileID: 3438841062029669467}
+  - component: {fileID: 6641968461665042943}
+  - component: {fileID: 2902658361209283192}
   m_Layer: 0
   m_Name: Escritorio
   m_TagString: Untagged
@@ -127,7 +128,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.12, y: -1.23}
+  m_Offset: {x: 0, y: 0.76}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -138,9 +139,25 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 4.75, y: 2.32}
+  m_Size: {x: 4.86, y: 1.16}
   m_EdgeRadius: 0
---- !u!114 &3438841062029669467
+--- !u!58 &6641968461665042943
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3438841062029669477}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.56, y: -0.5}
+  serializedVersion: 2
+  m_Radius: 0.75
+--- !u!114 &2902658361209283192
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -149,9 +166,31 @@ MonoBehaviour:
   m_GameObject: {fileID: 3438841062029669477}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6cb08a54fa16db74f87b9a534f170676, type: 3}
+  m_Script: {fileID: 11500000, guid: 7db70e0ea77f5ac47a8f4565a9406397, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  renderer: {fileID: 3438841061893394622}
-  sortingOrderBase: 5000
-  offset: 0
+  m_ShadowGroup: 0
+  m_HasRenderer: 0
+  m_UseRendererSilhouette: 1
+  m_CastsShadows: 1
+  m_SelfShadows: 0
+  m_ApplyToSortingLayers: 9d5baeb4
+  m_ShapePath:
+  - {x: -2.4300003, y: 0.18000007, z: 0}
+  - {x: -0.9981017, y: 0.18808961, z: 0}
+  - {x: -1.2101479, y: -0.1299808, z: 0}
+  - {x: -1.3010254, y: -0.44805098, z: 0}
+  - {x: -1.2101479, y: -0.8418524, z: 0}
+  - {x: -1.013248, y: -1.0690453, z: 0}
+  - {x: -0.55886173, y: -1.2810919, z: 0}
+  - {x: -0.043890476, y: -1.0690453, z: 0}
+  - {x: 0.13786316, y: -0.8115599, z: 0}
+  - {x: 0.18330193, y: -0.523782, z: 0}
+  - {x: 0.13786316, y: -0.17541957, z: 0}
+  - {x: -0.07418394, y: 0.172943, z: 0}
+  - {x: 2.4300003, y: 0.18000007, z: 0}
+  - {x: 2.4300003, y: 1.3399999, z: 0}
+  - {x: -2.4300003, y: 1.3399999, z: 0}
+  m_ShapePathHash: -1677389421
+  m_Mesh: {fileID: 0}
+  m_InstanceId: -24218

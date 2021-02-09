@@ -19,6 +19,8 @@ public class Linterna : MonoBehaviour
 
     public Transform posAbajo, posIzquierda, posDerecha;
 
+    public AudioSource audioSource;
+
     private void Start()
     {
         linternaDemas.gameObject.SetActive(encendida);
@@ -94,6 +96,8 @@ public class Linterna : MonoBehaviour
 
         if (Input.GetMouseButtonDown(0))
         {
+            audioSource.Play();
+
             encendida = !encendida;
 
             if (dir.y > 0)

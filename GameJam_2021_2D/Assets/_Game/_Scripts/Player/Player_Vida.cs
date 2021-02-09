@@ -46,13 +46,32 @@ public class Player_Vida : MonoBehaviour
         }
     }
 
+    void Actualizar_RadioLuz ()
+    {
+        light.pointLightOuterRadius = vidaActual;
+    }
+
+    public void SumarVida (int newValor)
+    {
+        if (newValor > 0)
+        {
+            vidaActual += newValor;
+
+            img.color = Color.green;
+
+            img.color = new Color(img.color.r, img.color.g, img.color.b, 1);
+        }
+    }
+
     public void RestarVida (int newValor)
     {
         if (newValor > 0 && vidaActual > 0)
         {
             vidaActual -= newValor;
 
-            light.pointLightOuterRadius = vidaActual;
+            Actualizar_RadioLuz();
+
+            img.color = Color.red;
 
             img.color = new Color(img.color.r, img.color.g, img.color.b, 1);
 

@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!221 &22100000
+AnimatorOverrideController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Mythos AOC
+  m_Controller: {fileID: 9100000, guid: 12309edf7fae18046ab5617d09dea471, type: 2}
+  m_Clips:
+  - m_OriginalClip: {fileID: 7400000, guid: 9aa41b34479ebf04bb3d83ef5ab96664, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 7f613b88fef39844fbadb8d18458f844, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: ac369da5107adb949869c72c4276fc5b, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: ca8b7dd5d058eb84fb801de0b62f61b0, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: b3eddd77b19165d4f8c1ccac84de3d72, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 22c933158b5076e4988a3f0510cdd0e5, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: d56459daba0e3cb4390322717149ede6, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 9580df508604939409954352fb0b552a, type: 2}

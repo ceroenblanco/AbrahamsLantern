@@ -5,6 +5,7 @@ using UnityEngine;
 public class Enemigo : MonoBehaviour
 {
     public Rigidbody2D rb;
+    public Animator anim;
 
     public float velocidad;
     [Range(-1, 1)]
@@ -12,6 +13,11 @@ public class Enemigo : MonoBehaviour
     public float duracionMov;
 
     float t = 0;
+
+    private void Start()
+    {
+        Actualizar_Anim();
+    }
 
     private void Update()
     {
@@ -23,8 +29,16 @@ public class Enemigo : MonoBehaviour
 
             dir_x = -dir_x;
             dir_y = -dir_y;
+
+            Actualizar_Anim();
         }
 
-        rb.MovePosition((Vector2)transform.position + (new Vector2(dir_x, dir_y) * Time.deltaTime));
+        rb.MovePosition((Vector2)transform.position + (new Vector2(dir_x, dir_y) * velocidad * Time.deltaTime));
+    }
+
+    void Actualizar_Anim ()
+    {
+        anim.SetFloat("Dir x", dir_x);
+        anim.SetFloat("Dir y", dir_y);
     }
 }

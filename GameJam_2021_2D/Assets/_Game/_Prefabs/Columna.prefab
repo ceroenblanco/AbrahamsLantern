@@ -11,8 +11,8 @@ GameObject:
   - component: {fileID: 81077419619317871}
   - component: {fileID: 81077419619317866}
   - component: {fileID: 81077419619317869}
-  - component: {fileID: 81077419619317868}
   - component: {fileID: 5991900347851485906}
+  - component: {fileID: 5172971170900677447}
   m_Layer: 0
   m_Name: Columna
   m_TagString: Untagged
@@ -71,7 +71,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -907177475
-  m_SortingLayer: 2
+  m_SortingLayer: 1
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 594a069404fb2fc48b6d94f4b6f15185, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -83,7 +83,7 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
-  m_SpriteSortPoint: 0
+  m_SpriteSortPoint: 1
 --- !u!61 &81077419619317869
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -97,10 +97,10 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -2.46}
+  m_Offset: {x: 0, y: 0.6}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
+    pivot: {x: 0.5, y: 0.05}
     oldSize: {x: 6.84, y: 6.84}
     newSize: {x: 6.84, y: 6.84}
     adaptiveTilingThreshold: 0.5
@@ -110,21 +110,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 2.27, y: 1.31}
   m_EdgeRadius: 0
---- !u!114 &81077419619317868
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 81077419619317870}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6cb08a54fa16db74f87b9a534f170676, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  renderer: {fileID: 81077419619317866}
-  sortingOrderBase: 5000
-  offset: -2
 --- !u!114 &5991900347851485906
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -139,3 +124,29 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   door_ctrl: {fileID: 0}
   on_off: 0
+--- !u!114 &5172971170900677447
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 81077419619317870}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7db70e0ea77f5ac47a8f4565a9406397, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_ShadowGroup: 0
+  m_HasRenderer: 1
+  m_UseRendererSilhouette: 1
+  m_CastsShadows: 1
+  m_SelfShadows: 0
+  m_ApplyToSortingLayers: 9d5baeb4
+  m_ShapePath:
+  - {x: -1.1255708, y: -0.02110076, z: 0}
+  - {x: 1.1737051, y: -0.037145615, z: 0}
+  - {x: 1.1268959, y: 1.2833118, z: 0}
+  - {x: -1.1255703, y: 1.267343, z: 0}
+  m_ShapePathHash: 1255433169
+  m_Mesh: {fileID: 0}
+  m_InstanceId: 20092

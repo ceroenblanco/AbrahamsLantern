@@ -16,40 +16,43 @@ public class BG_Switch : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        switch (tipo)
+        if (collision.transform.CompareTag("Player"))
         {
-            case tipoSwitch.apagar:
-                if (bg.activeSelf)
-                {
-                    bg.SetActive(false);
-
-                    if (!string.IsNullOrEmpty(str_sonidoCerrar))
+            switch (tipo)
+            {
+                case tipoSwitch.apagar:
+                    if (bg.activeSelf)
                     {
-                        if (!audioManager)
-                            audioManager = FindObjectOfType<AudioManager>();
+                        bg.SetActive(false);
 
-                        if (audioManager)
-                            audioManager.Play(str_sonidoCerrar);
+                        if (!string.IsNullOrEmpty(str_sonidoCerrar))
+                        {
+                            if (!audioManager)
+                                audioManager = FindObjectOfType<AudioManager>();
+
+                            if (audioManager)
+                                audioManager.Play(str_sonidoCerrar);
+                        }
                     }
-                }
-                break;
-            case tipoSwitch.encender:
-                if (!bg.activeSelf)
-                {
-                    bg.SetActive(true);
-
-                    if (!string.IsNullOrEmpty(str_sonidoAbrir))
+                    break;
+                case tipoSwitch.encender:
+                    if (!bg.activeSelf)
                     {
-                        if (!audioManager)
-                            audioManager = FindObjectOfType<AudioManager>();
+                        bg.SetActive(true);
 
-                        if (audioManager)
-                            audioManager.Play(str_sonidoAbrir);
+                        if (!string.IsNullOrEmpty(str_sonidoAbrir))
+                        {
+                            if (!audioManager)
+                                audioManager = FindObjectOfType<AudioManager>();
+
+                            if (audioManager)
+                                audioManager.Play(str_sonidoAbrir);
+                        }
                     }
-                }
-                break;
-            default:
-                break;
+                    break;
+                default:
+                    break;
+            }
         }
     }
 }

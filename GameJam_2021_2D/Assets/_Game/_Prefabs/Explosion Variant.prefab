@@ -1,18 +1,5 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &4572802707585266228
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8578978440905582315}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 52ea99d88971c07418f24a49870b23a8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  tiempo: 1.5
 --- !u!82 &2246173233658621364
 AudioSource:
   m_ObjectHideFlags: 0
@@ -24,7 +11,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 243240438779144392, guid: 3bd9fd369c4fc9f45b10af1024cbcc01,
     type: 2}
-  m_audioClip: {fileID: 8300000, guid: fc96116dc3c141440aabb5605744fea2, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 49d65b49cef8809498191217b24e8a86, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -110,6 +97,19 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &4572802707585266228
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8578978440905582315}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 52ea99d88971c07418f24a49870b23a8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tiempo: 1.5
 --- !u!1001 &8578978440905705101
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -167,7 +167,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 21215670, guid: b185c1a9cf067374586d095111b15bd1, type: 3}
       propertyPath: m_SortingLayer
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 21215670, guid: b185c1a9cf067374586d095111b15bd1, type: 3}
       propertyPath: m_SortingLayerID
@@ -175,7 +175,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 21237456, guid: b185c1a9cf067374586d095111b15bd1, type: 3}
       propertyPath: m_SortingLayer
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 21237456, guid: b185c1a9cf067374586d095111b15bd1, type: 3}
       propertyPath: m_SortingLayerID
@@ -183,7 +183,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 21240998, guid: b185c1a9cf067374586d095111b15bd1, type: 3}
       propertyPath: m_SortingLayer
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 21240998, guid: b185c1a9cf067374586d095111b15bd1, type: 3}
       propertyPath: m_SortingLayerID
@@ -191,7 +191,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 21253170, guid: b185c1a9cf067374586d095111b15bd1, type: 3}
       propertyPath: m_SortingLayer
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 21253170, guid: b185c1a9cf067374586d095111b15bd1, type: 3}
       propertyPath: m_SortingLayerID
