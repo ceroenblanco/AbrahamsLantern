@@ -93,7 +93,7 @@ public class Linterna : MonoBehaviour
                 linternaDemas.gameObject.SetActive(true);
             }
         }
-
+        //-------------------------------------------------------------------------------------------------
         if (Input.GetMouseButtonDown(0))
         {
             audioSource.Play();
@@ -105,10 +105,10 @@ public class Linterna : MonoBehaviour
             else
                 linternaDemas.gameObject.SetActive(encendida);
 
-            slr.gameObject.SetActive(encendida);
+            //slr.gameObject.SetActive(encendida);
 
-            if (!encendida)
-                slr.value = slr.maxValue;
+            //if (!encendida)
+            //    slr.value = slr.maxValue;
         }
 
         if (encendida)
@@ -124,10 +124,14 @@ public class Linterna : MonoBehaviour
                 else
                     linternaDemas.gameObject.SetActive(encendida);
 
-                slr.gameObject.SetActive(encendida);
+                //slr.gameObject.SetActive(encendida);
 
-                slr.value = slr.maxValue;
+                //slr.value = slr.maxValue;
             }
+        }
+        else if (slr.value < slr.maxValue)
+        {
+            slr.value += ((velDescarga * 2) * Time.deltaTime);
         }
     }
 

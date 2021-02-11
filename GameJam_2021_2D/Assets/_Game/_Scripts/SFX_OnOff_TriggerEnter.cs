@@ -13,11 +13,11 @@ public class SFX_OnOff_TriggerEnter : MonoBehaviour
     {
         if (On_Or_Off)
         {
-            mixer.SetFloat("SoundVol", 0);
+            mixer.SetFloat("MusicVol", 0);
         }
         else
         {
-            mixer.SetFloat("SoundVol", -80);
+            mixer.SetFloat("MusicVol", -80);
         }
 
         gameObject.SetActive(false);

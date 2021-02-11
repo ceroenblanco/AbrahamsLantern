@@ -1,14 +1,25 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class Player : MonoBehaviour
 {
     public Rigidbody2D rb;
+    public Linterna linterna;
     public Animator anim;
-    public GameObject go_pasos;
+    public GameObject go_signo, go_pasos;
 
     public float velocidad = 1;
+    [Space]
+    public UnityEvent OnActive;
+    public UnityEvent OnDeactive;
+
+    private void Start()
+    {
+        OnActive.AddListener(delegate { LinternaOn(); });
+        OnDeactive.AddListener(delegate { LinternaOff(); });
+    }
 
     void Update()
     {
@@ -50,5 +61,22 @@ public class Player : MonoBehaviour
 
             anim.SetBool("EnMovimiento", false);
         }
+    }
+
+    void LinternaOn ()
+    {
+        if (anim.GetFloat("Linterna") > 0)
+            linterna.enabled = true;
+    }
+
+    void LinternaOff ()
+    {
+        if (anim.GetFloat("Linterna") > 0)
+            linterna.enabled = false;
+    }
+
+    public void Actualizar_Signo (bool newBool)
+    {
+        go_signo.SetActive(newBool);
     }
 }
