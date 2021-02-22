@@ -14,6 +14,9 @@ public class Enemigo : MonoBehaviour
 
     float t = 0;
 
+    public bool incapacitado = false;
+    public Collider2D collider;
+
     private void Start()
     {
         Actualizar_Anim();
@@ -21,24 +24,53 @@ public class Enemigo : MonoBehaviour
 
     private void Update()
     {
-        t += Time.deltaTime;
-
-        if (t >= duracionMov)
+        if (!incapacitado)
         {
-            t = 0;
+            t += Time.deltaTime;
 
-            dir_x = -dir_x;
-            dir_y = -dir_y;
+            if (t >= duracionMov)
+            {
+                t = 0;
 
-            Actualizar_Anim();
+                dir_x = -dir_x;
+                dir_y = -dir_y;
+
+                Actualizar_Anim();
+            }
+
+            rb.MovePosition((Vector2)transform.position + (new Vector2(dir_x, dir_y) * velocidad * Time.deltaTime));
         }
+        else if (t > 0)
+        {
+            t -= Time.deltaTime;
 
-        rb.MovePosition((Vector2)transform.position + (new Vector2(dir_x, dir_y) * velocidad * Time.deltaTime));
+            if (t <= 0)
+            {
+                incapacitado = false;
+
+                collider.enabled = true;
+
+                anim.Play("Movimiento");
+            }
+        }
     }
 
     void Actualizar_Anim ()
     {
         anim.SetFloat("Dir x", dir_x);
         anim.SetFloat("Dir y", dir_y);
+    }
+
+    public void Incapacitar ()
+    {
+        incapacitado = true;
+
+        collider.enabled = false;
+
+        t = 10;
+
+        anim.SetFloat("Rot Estun", (float)((int)Random.Range(0, 2)));
+
+        anim.Play("Estun");
     }
 }

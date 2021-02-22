@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Experimental.Rendering.Universal;
+using UnityEngine.EventSystems;
 
 public class Linterna : MonoBehaviour
 {
@@ -25,9 +26,10 @@ public class Linterna : MonoBehaviour
     {
         linternaDemas.gameObject.SetActive(encendida);
 
-        slr.gameObject.SetActive(encendida);
+        //slr.gameObject.SetActive(encendida);
 
-        slr.value = slr.maxValue;
+        if (slr != null)
+            slr.value = slr.maxValue;
     }
 
     private void Update()
@@ -96,26 +98,33 @@ public class Linterna : MonoBehaviour
         //-------------------------------------------------------------------------------------------------
         if (Input.GetMouseButtonDown(0))
         {
-            audioSource.Play();
+            EventSystem eventSystem = EventSystem.current;
 
-            encendida = !encendida;
+            if (!eventSystem.IsPointerOverGameObject())
+            {
+                audioSource.Play();
 
-            if (dir.y > 0)
-                linternaArriba.gameObject.SetActive(encendida);
-            else
-                linternaDemas.gameObject.SetActive(encendida);
+                encendida = !encendida;
 
-            //slr.gameObject.SetActive(encendida);
+                if (dir.y > 0)
+                    linternaArriba.gameObject.SetActive(encendida);
+                else
+                    linternaDemas.gameObject.SetActive(encendida);
 
-            //if (!encendida)
-            //    slr.value = slr.maxValue;
+                //slr.gameObject.SetActive(encendida);
+
+                //if (!encendida)
+                //    slr.value = slr.maxValue;
+            }
         }
+
 
         if (encendida)
         {
-            slr.value -= (velDescarga * Time.deltaTime);
+            if (slr != null)
+                slr.value -= (velDescarga * Time.deltaTime);
 
-            if (slr.value <= 0)
+            if (slr != null && slr.value <= 0)
             {
                 encendida = false;
 
@@ -129,7 +138,7 @@ public class Linterna : MonoBehaviour
                 //slr.value = slr.maxValue;
             }
         }
-        else if (slr.value < slr.maxValue)
+        else if (slr != null && slr.value < slr.maxValue)
         {
             slr.value += ((velDescarga * 2) * Time.deltaTime);
         }
@@ -137,19 +146,27 @@ public class Linterna : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (encendida)
+        int layer = LayerMask.GetMask("Player");
+
+        layer = ~layer;
+
+        RaycastHit2D hit = Physics2D.Raycast(transform.position, dir, linternaDemas.pointLightOuterRadius, layer);
+
+        if (hit.collider != null)
         {
-            RaycastHit2D hit = Physics2D.Raycast(transform.position, dir, linternaDemas.pointLightOuterRadius, LayerMask.GetMask("Enemigo"));
+            print($"{hit.collider.transform.name}");
 
-            Debug.DrawRay(transform.position, dir * linternaDemas.pointLightOuterRadius, Color.yellow);
-
-            if (hit.collider != null)
+            if (encendida)
             {
-                print($"{hit.collider.transform.name}");
-
                 if (hit.collider.transform.GetComponent<Enemigo_Vida>())
                     hit.collider.transform.GetComponent<Enemigo_Vida>().RecibirDaño();
             }
+
+            Debug.DrawLine(transform.position, hit.point, Color.yellow);
+        }
+        else
+        {
+            Debug.DrawRay(transform.position, dir * linternaDemas.pointLightOuterRadius, Color.yellow); 
         }
     }
 }

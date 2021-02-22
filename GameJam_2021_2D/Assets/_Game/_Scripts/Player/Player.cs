@@ -60,6 +60,8 @@ public class Player : MonoBehaviour
                 go_pasos.SetActive(false);
 
             anim.SetBool("EnMovimiento", false);
+
+            rb.velocity = Vector3.zero;
         }
     }
 

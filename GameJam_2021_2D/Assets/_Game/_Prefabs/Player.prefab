@@ -575,7 +575,7 @@ GameObject:
   - component: {fileID: 4267550530897597351}
   - component: {fileID: 4267550530897597346}
   - component: {fileID: 4267550530897597357}
-  - component: {fileID: 6868530490966644856}
+  - component: {fileID: 5797873036886484840}
   m_Layer: 9
   m_Name: Player
   m_TagString: Player
@@ -662,6 +662,17 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 4267550529273510441}
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &4267550530897597346
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -678,7 +689,7 @@ MonoBehaviour:
   linternaArriba: {fileID: 4267550529998709160}
   linternaDemas: {fileID: 4267550529112531208}
   slr: {fileID: 0}
-  velDescarga: 20
+  velDescarga: 30
   encendida: 0
   posAbajo: {fileID: 4267550530157151184}
   posIzquierda: {fileID: 4267550530774741583}
@@ -696,15 +707,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7f9a890028f950c4aa966e98af06427c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  light: {fileID: 0}
+  luz: {fileID: 0}
   img: {fileID: 0}
+  sldr_vida: {fileID: 0}
   vidaInicial: 10
   vidaActual: 0
   vidaMax: 0
   invencible: 0
   tiempoInvencible: 1
---- !u!70 &6868530490966644856
-CapsuleCollider2D:
+--- !u!58 &5797873036886484840
+CircleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -716,9 +728,9 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0.06}
-  m_Size: {x: 0.76, y: 0.31}
-  m_Direction: 1
+  m_Offset: {x: 0, y: 0.09}
+  serializedVersion: 2
+  m_Radius: 0.3
 --- !u!1 &8228962778857159722
 GameObject:
   m_ObjectHideFlags: 0

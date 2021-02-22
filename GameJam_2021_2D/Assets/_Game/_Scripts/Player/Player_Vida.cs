@@ -6,8 +6,9 @@ using UnityEngine.Experimental.Rendering.Universal;
 
 public class Player_Vida : MonoBehaviour
 {
-    public Light2D light;
+    public Light2D luz;
     public Image img;
+    public Slider sldr_vida;
 
     public int vidaInicial, vidaActual, vidaMax;
 
@@ -21,12 +22,15 @@ public class Player_Vida : MonoBehaviour
 
         vidaActual = vidaMax;
 
-        light.pointLightOuterRadius = vidaActual;
+        luz.pointLightOuterRadius = vidaActual;
+
+        sldr_vida.maxValue = vidaMax;
+        Actualizar_BarraVida(vidaActual);
     }
 
     private void Update()
     {
-        if (img.color.a > 0)
+        if (img != null && img.color.a > 0)
         {
             Color newColor = img.color;
 
@@ -48,18 +52,32 @@ public class Player_Vida : MonoBehaviour
 
     void Actualizar_RadioLuz ()
     {
-        light.pointLightOuterRadius = vidaActual;
+        luz.pointLightOuterRadius = vidaActual;
+    }
+
+    void Actualizar_BarraVida (int newValor)
+    {
+        sldr_vida.value = newValor;
     }
 
     public void SumarVida (int newValor)
     {
-        if (newValor > 0)
+        if (newValor > 0 && vidaActual < vidaMax)
         {
             vidaActual += newValor;
 
-            img.color = Color.green;
+            if (vidaActual > vidaMax)
+                vidaActual = vidaMax;
 
-            img.color = new Color(img.color.r, img.color.g, img.color.b, 1);
+            if (img != null)
+            {
+                img.color = Color.green;
+
+                img.color = new Color(img.color.r, img.color.g, img.color.b, .5f);
+            }
+
+            Actualizar_BarraVida(vidaActual);
+            Actualizar_RadioLuz();
         }
     }
 
@@ -69,20 +87,37 @@ public class Player_Vida : MonoBehaviour
         {
             vidaActual -= newValor;
 
+            Actualizar_BarraVida(vidaActual);
             Actualizar_RadioLuz();
 
-            img.color = Color.red;
+            if (vidaActual <= 0)
+            {
+                FindObjectOfType<Ctrl_Main>().GameOver();
+            }
+            else
+            {
+                if (img != null)
+                {
+                    img.color = Color.red;
 
-            img.color = new Color(img.color.r, img.color.g, img.color.b, 1);
+                    img.color = new Color(img.color.r, img.color.g, img.color.b, .5f);
+                }
 
-            invencible = true;
+                invencible = true;
 
-            if (tiempoInvencible > 0)
-                t_inv = tiempoInvencible;
+                if (tiempoInvencible > 0)
+                    t_inv = tiempoInvencible;
+            }
         }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.transform.CompareTag("Enemigo") && !invencible)
+            RestarVida(1);
+    }
+
+    private void OnTriggerStay2D(Collider2D collision)
     {
         if (collision.transform.CompareTag("Enemigo") && !invencible)
             RestarVida(1);

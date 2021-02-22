@@ -21,6 +21,8 @@ public class CambiarMusica : MonoBehaviour
                 audioManager.Stop(musicaAnterior);
 
                 audioManager.Play(musicaSiguiente);
+
+                FindObjectOfType<Ctrl_Main>().nombreMusicaActual = musicaSiguiente;
             }
         }
 

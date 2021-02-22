@@ -12,11 +12,17 @@ public class Item_Vida : MonoBehaviour
     {
         if (collision.transform.CompareTag("Player"))
         {
-            collision.transform.GetComponent<Player_Vida>().SumarVida(cantVida);
+            Player_Vida playerVida = collision.transform.GetComponent<Player_Vida>();
 
-            FindObjectOfType<AudioManager>().Play(nombreSonidoPickUp);
+            if (playerVida != null && playerVida.vidaActual < playerVida.vidaMax)
+            {
+                playerVida.SumarVida(cantVida);
 
-            gameObject.SetActive(false);
+                FindObjectOfType<AudioManager>().Play(nombreSonidoPickUp);
+
+                gameObject.SetActive(false);
+            }
+
         }
     }
 }
