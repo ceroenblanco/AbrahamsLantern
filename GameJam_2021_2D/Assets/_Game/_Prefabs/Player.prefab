@@ -644,7 +644,7 @@ MonoBehaviour:
   anim: {fileID: 4267550529273510440}
   go_signo: {fileID: 8228962778857159722}
   go_pasos: {fileID: 4267550530011437103}
-  velocidad: 9
+  velocidad: 13
   OnActive:
     m_PersistentCalls:
       m_Calls: []
